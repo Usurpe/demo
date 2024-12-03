@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Property } from './Entities/property.entity';
+import { ExampleController } from './example/example.controller';
 
 
 @Module({
@@ -13,6 +14,8 @@ import { Property } from './Entities/property.entity';
       synchronize: true
     }),
   ],
+  controllers: [ExampleController], // Register the controller here
+  providers: [],
 })
 export class AppModule {}
 
